@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:3000/api";
-
 export interface City {
   id?: string;
   name: string;
@@ -10,17 +8,20 @@ export interface City {
 export const api = {
   // Cities endpoints
   getCities: async (): Promise<City[]> => {
-    const response = await axios.get(`${API_BASE_URL}/cities`);
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/cities`);
     return response.data;
   },
 
   addCity: async (city: City): Promise<City> => {
-    const response = await axios.post(`${API_BASE_URL}/cities`, city);
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_URL}/cities`,
+      city
+    );
     return response.data;
   },
 
   deleteCity: async (id: string): Promise<void> => {
-    await axios.delete(`${API_BASE_URL}/cities/${id}`);
+    await axios.delete(`${process.env.REACT_APP_API_URL}/cities/${id}`);
   },
 
   // Weather endpoints
@@ -29,9 +30,12 @@ export const api = {
     from: string,
     to: string
   ): Promise<any> => {
-    const response = await axios.get(`${API_BASE_URL}/weather/raw`, {
-      params: { city, from, to },
-    });
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/weather/raw`,
+      {
+        params: { city, from, to },
+      }
+    );
     return response.data;
   },
 
@@ -40,9 +44,12 @@ export const api = {
     from: string,
     to: string
   ): Promise<any> => {
-    const response = await axios.get(`${API_BASE_URL}/weather/average`, {
-      params: { city, from, to },
-    });
+    const response = await axios.get(
+      `${process.env.REACT_APP_BACKEND_API_URL}/weather/average`,
+      {
+        params: { city, from, to },
+      }
+    );
     return response.data;
   },
 };
