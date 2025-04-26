@@ -1,0 +1,110 @@
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.App-main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+.cities-section {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.city-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.city-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.city-form button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.city-form button:hover {
+  background: #0056b3;
+}
+
+.city-list {
+  list-style: none;
+  padding: 0;
+}
+
+.city-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.city-name {
+  padding: 10px;
+  width: 70%;
+  border-radius: 4px;
+  border: solid 1px black;
+}
+
+.city-name:hover {
+  background-color: rgb(185, 180, 180);
+}
+
+.city-item button {
+  padding: 10px;
+  background: #dc3545;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.city-item button:hover {
+  background: #c82333;
+}
+
+.weather-section {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.weather-data {
+  display: grid;
+  gap: 20px;
+}
+
+.weather-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card pre {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}

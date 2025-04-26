@@ -29,4 +29,4 @@ CREATE UNIQUE INDEX "City_name_key" ON "City"("name");
 CREATE UNIQUE INDEX "Forecast_id_key" ON "Forecast"("id");
 
 -- AddForeignKey
-ALTER TABLE "Forecast" ADD CONSTRAINT "Forecast_cityId_fkey" FOREIGN KEY ("cityId") REFERENCES "City"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Forecast" ADD CONSTRAINT "Forecast_cityId_fkey" FOREIGN KEY ("cityId") REFERENCES "City"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;

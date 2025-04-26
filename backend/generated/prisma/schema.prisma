@@ -15,18 +15,18 @@ datasource db {
 }
 
 model City {
-  id        String  @id @db.Uuid() @unique @default(uuid())
-  name      String  @unique
+  id        String     @id @unique @default(uuid()) @db.Uuid()
+  name      String     @unique
   latitude  Int
   longitude Int
   forecasts Forecast[]
 }
 
 model Forecast {
-  id          String  @id @db.Uuid() @unique @default(uuid())
-  fetchedAt   DateTime  @default(now())
-  city        City  @relation(fields: [cityId], references: [id])
-  cityId      String  @db.Uuid()
+  id          String   @id @unique @default(uuid()) @db.Uuid()
+  fetchedAt   DateTime @default(now())
+  city        City     @relation(fields: [cityId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  cityId      String   @db.Uuid()
   temperature Int
   windspeed   Int
 }

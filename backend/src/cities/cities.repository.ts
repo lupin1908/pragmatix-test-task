@@ -16,6 +16,7 @@ export class CitiesRepository {
   }
 
   async delete(id: string): Promise<void> {
-    await this.prisma.city.delete({ where: { id } });
+    console.log(id);
+    await this.prisma.city.delete({ where: { id: id } });
   }
 }
